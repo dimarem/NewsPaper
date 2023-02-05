@@ -1,0 +1,27 @@
+{% extends 'flatpages/default.html' %}
+
+{% load censor %}
+
+{% block title %}
+Все статьи
+{% endblock title %}
+
+{% block content %}
+<h1 class="my-5">Все статьи ({{ posts|length }})</h1>
+{% if posts %}
+    {% for post in posts %}
+        <ul>
+            <li>
+                <div class="mb-0 h5">
+                    <a href="/news/{{ post.id }}" class="text-decoration-none">{{ post.title|censor }}</a>
+                </div>
+                <div class="text-secondary" style="font-size: .875rem;">от {{ post.dt_created|date:'d.m.Y' }}</div>
+                <!-- вместо фильра "truncatechars" можно воспользоваться методом "preview" модели -->
+                <div class="mt-2">{{ post.content|truncatechars:20|censor }}</div>
+            </li>
+        </ul>
+    {% endfor %}
+{% else %}
+    <div>Статьи отсутствуют!</div>
+{% endif %}
+{% endblock content %}

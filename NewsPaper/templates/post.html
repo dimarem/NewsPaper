@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% load censor %}
+
+{% block title %}
+{{ post.title }}
+{% endblock title %}
+
+{% block content %}
+<h1 class="mt-5">{{ post.title|censor }}</h1>
+<div class="mb-5 text-secondary" style="font-size: .875rem;">от {{ post.dt_created|date:'d.m.Y' }}</div>
+<div>{{ post.content|censor }}</div>
+{% endblock content %}

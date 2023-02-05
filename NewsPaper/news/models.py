@@ -23,10 +23,16 @@ class Author(models.Model):
         self.rating = author_posts_total_rating * 3 + author_comments_total_rating + author_posts_comments_total_rating
         self.save()
 
+    def __str__(self):
+        return f'{self.user.username}'
+
 
 class Category(models.Model):
     """Класс описывающий модель категории новости."""
     name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return f'{self.name}'
 
 
 class Post(models.Model):
@@ -64,6 +70,9 @@ class Post(models.Model):
             self.rating -= 1
             self.save()
 
+    def __str__(self):
+        return f'{self.title}'
+
 
 class PostCategory(models.Model):
     """Класс описывающий модель промежуточной таблицы для реализации связи 'многие-ко-многим'
@@ -90,3 +99,6 @@ class Comment(models.Model):
         if self.rating:
             self.rating -= 1
             self.save()
+
+    def __str__(self):
+        return f'{self.content[:100]}...'
