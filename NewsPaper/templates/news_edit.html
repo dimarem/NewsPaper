@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Новость
+{% endblock title %}
+
+{% block content %}
+<h1 class="mt-5 mb-2">Новость</h1>
+
+<form method="post" style="max-width: 500px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить" class="btn btn-primary"/>
+</form>
+{% endblock content %}

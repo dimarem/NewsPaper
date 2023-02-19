@@ -2,12 +2,22 @@
 
 {% load censor %}
 
+{% load custom_tags %}
+
 {% block title %}
 Все статьи
 {% endblock title %}
 
 {% block content %}
-<h1 class="my-5">Все статьи ({{ posts|length }})</h1>
+
+<h1 class="mt-5 mb-2">Все статьи ({{ page_obj.paginator.count }})</h1>
+
+<div class="mb-5">
+    <a href="/news/search/" class="text-decoration-none">Поиск</a>
+    <a href="/news/create/" class="text-decoration-none">Создать новость</a>
+    <a href="/article/create/" class="text-decoration-none">Создать статью</a>
+</div>
+
 {% if posts %}
     {% for post in posts %}
         <ul>
@@ -24,4 +34,25 @@
 {% else %}
     <div>Статьи отсутствуют!</div>
 {% endif %}
+
+{% if page_obj.paginator.num_pages > 1 %}
+<nav>
+    <ul class="pagination">
+        {% for page_number in page_obj.paginator.get_elided_page_range %}
+            {% if page_number == page_obj.number %}
+                <li class="page-item active">
+            {% else %}
+                <li class="page-item">
+            {% endif %}
+                {% if page_number != page_obj.paginator.ELLIPSIS %}
+                    <a class="page-link" href="?{% url_replace page=page_number %}">{{ page_number }}</a>
+                {% else %}
+                    <span class="page-link">{{ page_number }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+
 {% endblock content %}

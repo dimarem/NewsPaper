@@ -8,6 +8,15 @@
 
 {% block content %}
 <h1 class="mt-5">{{ post.title|censor }}</h1>
-<div class="mb-5 text-secondary" style="font-size: .875rem;">от {{ post.dt_created|date:'d.m.Y' }}</div>
+<div class="my-2 text-secondary" style="font-size: .875rem;">от {{ post.dt_created|date:'d.m.Y' }}</div>
+<div class="mb-5">
+    {% if post.type == post.NEWS %}
+        <a href="/news/{{ post.id }}/edit" class="text-decoration-none">Редактировать</a>
+        <a href="/news/{{ post.id }}/delete" class="text-decoration-none">Удалить</a>
+    {% else %}
+        <a href="/article/{{ post.id }}/edit" class="text-decoration-none">Редактировать</a>
+        <a href="/article/{{ post.id }}/delete" class="text-decoration-none">Удалить</a>
+    {% endif %}
+</div>
 <div>{{ post.content|censor }}</div>
 {% endblock content %}
