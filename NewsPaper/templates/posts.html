@@ -16,6 +16,9 @@
     <a href="/news/search/" class="text-decoration-none">Поиск</a>
     <a href="/news/create/" class="text-decoration-none">Создать новость</a>
     <a href="/article/create/" class="text-decoration-none">Создать статью</a>
+    {% if is_not_author %}
+        <a href="/news/upgrade/" class="text-decoration-none">Стать автором</a>
+    {% endif %}
 </div>
 
 {% if posts %}

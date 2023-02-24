@@ -1,6 +1,10 @@
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 
 from .models import Post, Author
 from .filters import PostFilter
@@ -22,6 +26,7 @@ class PostsList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
+        context['is_not_author'] = not self.request.user.groups.filter(name='author').exists()
         return context
 
 
@@ -42,8 +47,9 @@ class PostDetail(DetailView):
     context_object_name = 'post'
 
 
-class NewsCreate(CreateView):
+class NewsCreate(PermissionRequiredMixin, CreateView):
     """Класс отвечающий за отображение формы создания статьи с типом 'NE'."""
+    permission_required = 'news.add_post'
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
@@ -60,22 +66,25 @@ class NewsCreate(CreateView):
         return super().form_valid(form)
 
 
-class NewsUpdate(UpdateView):
+class NewsUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     """Класс отвечающий за отображение формы изменения статьи с типом 'NE'."""
+    permission_required = 'news.change_post'
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
 
 
-class NewsDelete(DeleteView):
+class NewsDelete(PermissionRequiredMixin, DeleteView):
     """Класс отвечающий за подтверждение удаления статьи с типом 'NE'."""
+    permission_required = 'news.delete_post'
     model = Post
     template_name = 'news_delete.html'
     success_url = reverse_lazy('post_list')
 
 
-class ArticleCreate(CreateView):
+class ArticleCreate(PermissionRequiredMixin, CreateView):
     """Класс отвечающий за отображение формы создания статьи с типом 'AR'."""
+    permission_required = 'news.add_post'
     form_class = PostForm
     model = Post
     template_name = 'article_edit.html'
@@ -92,15 +101,25 @@ class ArticleCreate(CreateView):
         return super().form_valid(form)
 
 
-class ArticleUpdate(UpdateView):
+class ArticleUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     """Класс отвечающий за отображение формы изменения статьи с типом 'AR'."""
+    permission_required = 'news.change_post'
     form_class = PostForm
     model = Post
     template_name = 'article_edit.html'
 
 
-class ArticleDelete(DeleteView):
+class ArticleDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     """Класс отвечающий за подтверждение удаления статьи с типом 'AR'."""
+    permission_required = 'news.delete_post'
     model = Post
     template_name = 'article_delete.html'
     success_url = reverse_lazy('post_list')
+
+
+@login_required
+def upgrade_me(request):
+    user = request.user
+    if not request.user.groups.filter(name='author').exists():
+        Group.objects.get(name='author').user_set.add(user)
+    return redirect('/news/')

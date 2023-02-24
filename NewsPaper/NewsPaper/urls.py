@@ -15,17 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
 from news.views import NewsCreate, NewsUpdate, NewsDelete, ArticleCreate, ArticleUpdate, ArticleDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('', lambda r: redirect('news/')),
     path('news/', include('news.urls')),
     path('news/create/', NewsCreate.as_view(), name='news_create'),
     path('news/<int:pk>/edit/', NewsUpdate.as_view(), name='news_update'),
     path('news/<int:pk>/delete/', NewsDelete.as_view(), name='news_delete'),
     path('article/create/', ArticleCreate.as_view(), name='article_create'),
     path('article/<int:pk>/edit/', ArticleUpdate.as_view(), name='article_update'),
-    path('article/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete')
+    path('article/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete'),
+    path('accounts/', include('allauth.urls'))
 ]
