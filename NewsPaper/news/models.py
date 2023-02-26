@@ -31,9 +31,17 @@ class Author(models.Model):
 class Category(models.Model):
     """Класс описывающий модель категории новости."""
     name = models.CharField(max_length=100, unique=True)
+    subscribers = models.ManyToManyField(User, through='CategoryUser', related_name='subscribed_categories')
 
     def __str__(self):
         return f'{self.name}'
+
+
+class CategoryUser(models.Model):
+    """Класс описывающий модель промежуточной таблицы для реализации связи 'многие-ко-многим'
+    м-у моделями пользователей и категорий новостей."""
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Post(models.Model):
@@ -50,7 +58,7 @@ class Post(models.Model):
         default=ARTICLE
     )
     author = models.ForeignKey(Author, models.CASCADE, related_name='posts')
-    categories = models.ManyToManyField('Category', through='PostCategory')
+    categories = models.ManyToManyField('Category', through='PostCategory', related_name='posts')
     title = models.CharField(max_length=150)
     content = models.TextField()
     rating = models.IntegerField(default=0)

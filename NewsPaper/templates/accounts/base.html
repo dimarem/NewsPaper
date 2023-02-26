@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <title>{% block head_title %}{% endblock head_title %}</title>
     </head>
     <body>
