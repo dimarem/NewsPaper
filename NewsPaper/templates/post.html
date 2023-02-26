@@ -17,6 +17,13 @@
         <a href="/article/{{ post.id }}/edit" class="text-decoration-none">Редактировать</a>
         <a href="/article/{{ post.id }}/delete" class="text-decoration-none">Удалить</a>
     {% endif %}
+    {% if user.is_authenticated %}
+        {% if subscribe %}
+            <a href="/news/category/subscribe/?{{ categories }}" class="text-decoration-none">Подписаться</a>
+        {% else %}
+            <a href="/news/category/unsubscribe/?{{ categories }}" class="text-decoration-none">Отписаться</a>
+        {% endif %}
+    {% endif %}
 </div>
 <div>{{ post.content|censor }}</div>
 {% endblock content %}
