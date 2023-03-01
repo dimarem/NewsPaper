@@ -5,9 +5,6 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from django.core.mail import EmailMultiAlternatives
-from django.conf import settings
-from django.template.loader import render_to_string
 
 from .models import Post, Author, Category
 from .filters import PostFilter
@@ -86,28 +83,6 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
 
         return super().form_valid(form)
 
-    def post(self, request, *args, **kwargs):
-        super().post(request, *args, **kwargs)
-
-        html_content = render_to_string('mail.html', {'post': self.object})
-
-        recipients = []
-        for category in self.object.categories.all():
-            for subscriber in category.subscribers.all():
-                recipients.append(subscriber.email)
-
-        if len(recipients):
-            msg = EmailMultiAlternatives(
-                subject=f'Здравствуй, {self.request.user.username}. Новая статья в твоём любимом разделе!',
-                body=self.object.content,
-                from_email=f'{settings.EMAIL_HOST_USER}@yandex.ru',
-                to=[*recipients]
-            )
-            msg.attach_alternative(html_content, "text/html")
-            msg.send()
-
-        return redirect('post_detail', pk=self.object.id)
-
 
 class NewsUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     """Класс отвечающий за изменение статьи с типом 'NE'."""
@@ -144,28 +119,6 @@ class ArticleCreate(PermissionRequiredMixin, CreateView):
             news.author = Author.objects.get(user__name='Anonymous')
 
         return super().form_valid(form)
-
-    def post(self, request, *args, **kwargs):
-        super().post(request, *args, **kwargs)
-
-        html_content = render_to_string('mail.html', {'post': self.object})
-
-        recipients = []
-        for category in self.object.categories.all():
-            for subscriber in category.subscribers.all():
-                recipients.append(subscriber.email)
-
-        if len(recipients):
-            msg = EmailMultiAlternatives(
-                subject=f'Здравствуй, {self.request.user.username}. Новая статья в твоём любимом разделе!',
-                body=self.object.content,
-                from_email=f'{settings.EMAIL_HOST_USER}@yandex.ru',
-                to=[*recipients]
-            )
-            msg.attach_alternative(html_content, "text/html")
-            msg.send()
-
-        return redirect('post_detail', pk=self.object.id)
 
 
 class ArticleUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
