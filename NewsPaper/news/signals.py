@@ -1,10 +1,20 @@
-from django.db.models.signals import m2m_changed
+import datetime
+
+from django.db.models.signals import m2m_changed, pre_save
 from django.dispatch import receiver
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.core.exceptions import PermissionDenied
 
 from .models import Post
+
+
+@receiver(pre_save, sender=Post)
+def test(sender, instance, **kwargs):
+    """Не дает создать более трех новостей в сутки."""
+    if len(instance.author.posts.filter(dt_created__date=datetime.date.today())) > 2:
+        raise PermissionDenied()
 
 
 @receiver(m2m_changed, sender=Post.categories.through)
@@ -17,8 +27,6 @@ def notify_subscribers(sender, instance, action, reverse, **kwargs):
         for category in instance.categories.all():
             for subscriber in category.subscribers.all():
                 recipients.append(subscriber.email)
-
-        print(list(set(recipients)))
 
         if len(recipients):
             if instance.type == Post.ARTICLE:
