@@ -11,7 +11,7 @@ from .models import Post
 
 
 @receiver(pre_save, sender=Post)
-def test(sender, instance, **kwargs):
+def post_amount_restriction(sender, instance, **kwargs):
     """Не дает создать более трех новостей в сутки."""
     if len(instance.author.posts.filter(dt_created__date=datetime.date.today())) > 2:
         raise PermissionDenied()
