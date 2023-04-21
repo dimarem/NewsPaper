@@ -34,8 +34,8 @@ def user_greeting(sender, instance, **kwargs):
     msg.send()
 
 
-@receiver(m2m_changed, sender=Post.categories.through)
-def notify_subscribers(sender, instance, action, reverse, **kwargs):
-    """Уведомляет подписчика о создании новости с категорией, на которую он подписан."""
-    if action == 'post_add' and not reverse:
-        notify_subscribers_task.delay(instance.id)
+# @receiver(m2m_changed, sender=Post.categories.through)
+# def notify_subscribers(sender, instance, action, reverse, **kwargs):
+#     """Уведомляет подписчика о создании новости с категорией, на которую он подписан."""
+#     if action == 'post_add' and not reverse:
+#         notify_subscribers_task.delay(instance.id)
