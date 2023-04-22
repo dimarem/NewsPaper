@@ -1,0 +1,387 @@
+2023-04-22 17:10:06,457 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 5: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B90F50B40>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 5: 'get_available_languages'. Did you forget to register or load this tag?
+2023-04-22 17:10:06,463 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 195317
+2023-04-22 17:12:03,995 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 27: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B90EBC700>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 27: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2023-04-22 17:12:04,011 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 186848
+2023-04-22 18:15:53,818 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B9152C380>) Internal Server Error: /news/search/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2023-04-22 18:15:53,818 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/search/ HTTP/1.1" 500 170718
+2023-04-22 18:47:02,252 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B90F61BC0>) Internal Server Error: /news/search/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2023-04-22 18:47:02,252 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/search/ HTTP/1.1" 500 170718
+2023-04-22 18:47:06,721 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B91302C40>) Internal Server Error: /news/search/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2023-04-22 18:47:06,722 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/search/ HTTP/1.1" 500 170581
+2023-04-22 18:53:08,716 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B913C2440>) Internal Server Error: /news/category/subscribe/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 166, in subscribe_to_categories
+    return render(request, 'subscription.html')
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2023-04-22 18:53:08,723 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/category/subscribe/?category=1 HTTP/1.1" 500 178456
+2023-04-22 18:53:12,486 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x0000021B913D6780>) Internal Server Error: /news/category/subscribe/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 166, in subscribe_to_categories
+    return render(request, 'subscription.html')
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'trans', expected 'endblock'. Did you forget to register or load this tag?
+2023-04-22 18:53:12,486 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/category/subscribe/?category=1 HTTP/1.1" 500 178457

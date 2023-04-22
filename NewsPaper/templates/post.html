@@ -1,6 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
 {% load censor %}
+{% load i18n %}
 
 {% block title %}
 {{ post.title }}
@@ -11,17 +12,17 @@
 <div class="my-2 text-secondary" style="font-size: .875rem;">от {{ post.dt_created|date:'d.m.Y' }}</div>
 <div class="mb-5">
     {% if post.type == post.NEWS %}
-        <a href="/news/{{ post.id }}/edit" class="text-decoration-none">Редактировать</a>
-        <a href="/news/{{ post.id }}/delete" class="text-decoration-none">Удалить</a>
+        <a href="/news/{{ post.id }}/edit" class="text-decoration-none">{% trans 'Редактировать' %}</a>
+        <a href="/news/{{ post.id }}/delete" class="text-decoration-none">{% trans 'Удалить' %}</a>
     {% else %}
-        <a href="/article/{{ post.id }}/edit" class="text-decoration-none">Редактировать</a>
-        <a href="/article/{{ post.id }}/delete" class="text-decoration-none">Удалить</a>
+        <a href="/article/{{ post.id }}/edit" class="text-decoration-none">{% trans 'Редактировать' %}</a>
+        <a href="/article/{{ post.id }}/delete" class="text-decoration-none">{% trans 'Удалить' %}</a>
     {% endif %}
     {% if user.is_authenticated %}
         {% if subscribe %}
-            <a href="/news/category/subscribe/?{{ categories }}" class="text-decoration-none">Подписаться</a>
+            <a href="/news/category/subscribe/?{{ categories }}" class="text-decoration-none">{% trans 'Подписаться' %}</a>
         {% else %}
-            <a href="/news/category/unsubscribe/?{{ categories }}" class="text-decoration-none">Отписаться</a>
+            <a href="/news/category/unsubscribe/?{{ categories }}" class="text-decoration-none">{% trans 'Отписаться' %}</a>
         {% endif %}
     {% endif %}
 </div>

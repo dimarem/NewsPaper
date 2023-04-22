@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,6 @@
     <title>Greeting!</title>
 </head>
 <body>
-    {{ user.username }} добро пожаловать на портале NewsPaper!
+    {{ user.username }} {% trans 'добро пожаловать на портале' %} NewsPaper!
 </body>
 </html>

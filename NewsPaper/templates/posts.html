@@ -1,23 +1,23 @@
 {% extends 'flatpages/default.html' %}
 
 {% load censor %}
-
 {% load custom_tags %}
+{% load i18n %}
 
 {% block title %}
-Все статьи
+{% trans 'Все статьи' %}
 {% endblock title %}
 
 {% block content %}
 
-<h1 class="mt-5 mb-2">Все статьи ({{ page_obj.paginator.count }})</h1>
+<h1 class="mt-5 mb-2">{% trans 'Все статьи' %} ({{ page_obj.paginator.count }})</h1>
 
 <div class="mb-5">
-    <a href="/news/search/" class="text-decoration-none">Поиск</a>
-    <a href="/news/create/" class="text-decoration-none">Создать новость</a>
-    <a href="/article/create/" class="text-decoration-none">Создать статью</a>
+    <a href="/news/search/" class="text-decoration-none">{% trans 'Поиск' %}</a>
+    <a href="/news/create/" class="text-decoration-none">{% trans 'Создать новость' %}</a>
+    <a href="/article/create/" class="text-decoration-none">{% trans 'Создать статью' %}</a>
     {% if is_not_author %}
-        <a href="/news/upgrade/" class="text-decoration-none">Стать автором</a>
+        <a href="/news/upgrade/" class="text-decoration-none">{% trans 'Стать автором' %}</a>
     {% endif %}
 </div>
 
@@ -35,7 +35,7 @@
         </ul>
     {% endfor %}
 {% else %}
-    <div>Статьи отсутствуют!</div>
+    <div>{% trans 'Статьи отсутствуют' %}!</div>
 {% endif %}
 
 {% if page_obj.paginator.num_pages > 1 %}

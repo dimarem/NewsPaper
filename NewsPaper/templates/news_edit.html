@@ -1,11 +1,13 @@
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% block title %}
-Новость
+{% trans 'Новость' %}
 {% endblock title %}
 
 {% block content %}
-<h1 class="mt-5 mb-2">Новость</h1>
+<h1 class="mt-5 mb-2">{% trans 'Новость' %}</h1>
 
 <form method="post" style="max-width: 500px;">
     {% csrf_token %}

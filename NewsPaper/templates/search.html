@@ -1,11 +1,13 @@
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% block title %}
-Поиск
+{% trans 'Поиск' %}
 {% endblock title %}
 
 {% block content %}
-<h1 class="mt-5 mb-2">Поиск статей:</h1>
+<h1 class="mt-5 mb-2">{% trans 'Поиск статей' %}:</h1>
 
 <form action="/news/" method="get" style="max-width: 500px;">
     {{ filterset.form.as_p }}

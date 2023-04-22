@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-22 19:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\templates\article_delete.html:6 .\templates\article_delete.html:10
+msgid "Удаление статьи"
+msgstr ""
+
+#: .\templates\article_edit.html:6 .\templates\article_edit.html:10
+msgid "Статья"
+msgstr "Article"
+
+#: .\templates\flatpages\default.html:29
+msgid "Выйти"
+msgstr "Logout"
+
+#: .\templates\flatpages\default.html:31
+msgid "Войти"
+msgstr "Login"
+
+#: .\templates\greeting.html:10
+msgid "добро пожаловать на портале"
+msgstr "welcome to the portal"
+
+#: .\templates\lang_form.html:15
+msgid "Перевести"
+msgstr "Translate"
+
+#: .\templates\mail.html:13
+msgid "Прочесть"
+msgstr "Read"
+
+#: .\templates\news_edit.html:6 .\templates\news_edit.html:10
+msgid "Новость"
+msgstr "News"
+
+#: .\templates\post.html:15 .\templates\post.html:18
+msgid "Редактировать"
+msgstr "Edit"
+
+#: .\templates\post.html:16 .\templates\post.html:19
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\templates\post.html:23
+msgid "Подписаться"
+msgstr "Subscribe"
+
+#: .\templates\post.html:25
+msgid "Отписаться"
+msgstr "Unsubscribe"
+
+#: .\templates\posts.html:8 .\templates\posts.html:13
+msgid "Все статьи"
+msgstr "All articles"
+
+#: .\templates\posts.html:16 .\templates\search.html:6
+msgid "Поиск"
+msgstr "Search"
+
+#: .\templates\posts.html:17
+msgid "Создать новость"
+msgstr "Create news"
+
+#: .\templates\posts.html:18
+msgid "Создать статью"
+msgstr "Create article"
+
+#: .\templates\posts.html:20
+msgid "Стать автором"
+msgstr "Become an author"
+
+#: .\templates\posts.html:38
+msgid "Статьи отсутствуют"
+msgstr "There are no articles"
+
+#: .\templates\search.html:10
+msgid "Поиск статей"
+msgstr "Search for articles"
+
+#: .\templates\subscription.html:6
+msgid "Подписка"
+msgstr "Subscription"
+
+#: .\templates\subscription.html:10
+msgid "Вы подписаны на рассылку новостей"
+msgstr "You have been subscribed to the newsletter"
+
+#: .\templates\subscription.html:12 .\templates\unsubscription.html:12
+msgid "Продолжить"
+msgstr "Continue"
+
+#: .\templates\unsubscription.html:6
+msgid "Отписка"
+msgstr "Unsubscribe"
+
+#: .\templates\unsubscription.html:10
+msgid "Вы отписаны от рассылки новостей"
+msgstr "You have been unsubscribed from the newsletter"

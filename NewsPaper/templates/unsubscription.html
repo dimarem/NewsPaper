@@ -1,12 +1,14 @@
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% block title %}
-Подписка
+{% trans 'Отписка' %}
 {% endblock title %}
 
 {% block content %}
-<h1 class="mt-5">Вы отписаны от рассылки новостей!</h1>
+<h1 class="mt-5">{% trans 'Вы отписаны от рассылки новостей' %}!</h1>
 <div class="mb-5">
-  <a href="{% url 'post_list' %}">Продолжить</a>
+  <a href="{% url 'post_list' %}">{% trans 'Продолжить' %}</a>
 </div>
 {% endblock content %}
