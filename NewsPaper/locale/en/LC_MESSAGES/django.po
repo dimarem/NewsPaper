@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 19:48+0300\n"
+"POT-Creation-Date: 2023-04-22 20:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,7 @@ msgstr "Search"
 
 #: .\templates\posts.html:17
 msgid "Создать новость"
-msgstr "Create a news item"
+msgstr "Create a news"
 
 #: .\templates\posts.html:18
 msgid "Создать статью"
@@ -92,15 +92,19 @@ msgstr "Create an article"
 
 #: .\templates\posts.html:20
 msgid "Стать автором"
-msgstr ""
+msgstr "Become an author"
 
 #: .\templates\posts.html:38
 msgid "Статьи отсутствуют"
-msgstr "Become an author"
+msgstr "There are no articles"
 
 #: .\templates\search.html:10
 msgid "Поиск статей"
 msgstr "Search for articles"
+
+#: .\templates\search.html:14
+msgid "Найти"
+msgstr "Search"
 
 #: .\templates\subscription.html:6
 msgid "Подписка"
@@ -121,7 +125,3 @@ msgstr "Unsubscribe"
 #: .\templates\unsubscription.html:10
 msgid "Вы отписаны от рассылки новостей"
 msgstr "You have been unsubscribed from the newsletter"
-
-#: .\templates\search.html:14
-msgid "Найти"
-msgstr "Find"

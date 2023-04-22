@@ -1,4 +1,5 @@
 from django.forms import TextInput, DateInput
+from django.utils.translation import gettext as _
 
 from django_filters import FilterSet, CharFilter, DateTimeFilter
 from .models import Post
