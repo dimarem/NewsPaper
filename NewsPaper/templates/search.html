@@ -11,6 +11,6 @@
 
 <form action="/news/" method="get" style="max-width: 500px;">
     {{ filterset.form.as_p }}
-    <input type="submit" value="Найти" class="btn btn-primary"/>
+    <input type="submit" value="{% trans 'Найти' %}" class="btn btn-primary"/>
 </form>
 {% endblock content %}

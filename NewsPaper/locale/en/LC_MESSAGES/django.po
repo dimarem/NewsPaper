@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 19:00+0300\n"
+"POT-Creation-Date: 2023-04-22 19:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: .\templates\article_delete.html:6 .\templates\article_delete.html:10
 msgid "Удаление статьи"
-msgstr ""
+msgstr "Deleting an article"
+
+#: .\templates\article_delete.html:14 .\templates\news_delete.html:14
+msgid "Удаляем"
+msgstr "Delete"
+
+#: .\templates\article_delete.html:15 .\templates\post.html:16
+#: .\templates\post.html:19
+msgid "Удалить"
+msgstr "Delete"
 
 #: .\templates\article_edit.html:6 .\templates\article_edit.html:10
 msgid "Статья"
 msgstr "Article"
+
+#: .\templates\article_edit.html:15 .\templates\news_edit.html:15
+msgid "Сохранить"
+msgstr "Save"
 
 #: .\templates\flatpages\default.html:29
 msgid "Выйти"
@@ -53,10 +66,6 @@ msgstr "News"
 msgid "Редактировать"
 msgstr "Edit"
 
-#: .\templates\post.html:16 .\templates\post.html:19
-msgid "Удалить"
-msgstr "Delete"
-
 #: .\templates\post.html:23
 msgid "Подписаться"
 msgstr "Subscribe"
@@ -75,19 +84,19 @@ msgstr "Search"
 
 #: .\templates\posts.html:17
 msgid "Создать новость"
-msgstr "Create news"
+msgstr "Create a news item"
 
 #: .\templates\posts.html:18
 msgid "Создать статью"
-msgstr "Create article"
+msgstr "Create an article"
 
 #: .\templates\posts.html:20
 msgid "Стать автором"
-msgstr "Become an author"
+msgstr ""
 
 #: .\templates\posts.html:38
 msgid "Статьи отсутствуют"
-msgstr "There are no articles"
+msgstr "Become an author"
 
 #: .\templates\search.html:10
 msgid "Поиск статей"
@@ -99,7 +108,7 @@ msgstr "Subscription"
 
 #: .\templates\subscription.html:10
 msgid "Вы подписаны на рассылку новостей"
-msgstr "You have been subscribed to the newsletter"
+msgstr "You have subscribed to the newsletter"
 
 #: .\templates\subscription.html:12 .\templates\unsubscription.html:12
 msgid "Продолжить"
@@ -112,3 +121,7 @@ msgstr "Unsubscribe"
 #: .\templates\unsubscription.html:10
 msgid "Вы отписаны от рассылки новостей"
 msgstr "You have been unsubscribed from the newsletter"
+
+#: .\templates\search.html:14
+msgid "Найти"
+msgstr "Find"
