@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django_apscheduler'
+    'django_apscheduler',
+    'modeltranslation'
 ]
 
 SITE_ID = 1
@@ -281,4 +282,9 @@ LOGGING = {
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
+]
+
+LANGUAGES = [
+    ('en-us', 'English'),
+    ('ru', 'Русский')
 ]
