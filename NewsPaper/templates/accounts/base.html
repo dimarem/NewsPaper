@@ -4,9 +4,10 @@
         {% load static %}
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <link href="{% static 'css/themes.css' %}" rel="stylesheet" />
         <title>{% block head_title %}{% endblock head_title %}</title>
     </head>
-    <body>
+    <body class="{{ request.session.theme }}">
         {% block body %}
         {% block content %}
         {% endblock content %}

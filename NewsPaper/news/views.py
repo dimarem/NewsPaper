@@ -1,3 +1,5 @@
+import pytz
+
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -6,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.core.cache import cache
+from django.utils import timezone
 
 from .models import Post, Author, Category
 from .filters import PostFilter
@@ -28,6 +31,8 @@ class PostsList(ListView):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
         context['is_not_author'] = not self.request.user.groups.filter(name='author').exists()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
         return context
 
 
@@ -174,3 +179,9 @@ def unsubscribe_from_categories(request):
         if int(category_id) in subscribed_categories_ids:
             Category.objects.get(pk=category_id).subscribers.remove(request.user)
     return render(request, 'unsubscription.html')
+
+
+def set_timezone(request):
+    """Установить таймзону."""
+    request.session['django_timezone'] = request.POST['timezone']
+    return redirect('/news/')

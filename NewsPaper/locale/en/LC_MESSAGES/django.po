@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 20:09+0300\n"
+"POT-Creation-Date: 2023-04-22 22:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,27 +74,27 @@ msgstr "Subscribe"
 msgid "Отписаться"
 msgstr "Unsubscribe"
 
-#: .\templates\posts.html:8 .\templates\posts.html:13
+#: .\templates\posts.html:8 .\templates\posts.html:17
 msgid "Все статьи"
 msgstr "All articles"
 
-#: .\templates\posts.html:16 .\templates\search.html:6
+#: .\templates\posts.html:20 .\templates\search.html:6
 msgid "Поиск"
 msgstr "Search"
 
-#: .\templates\posts.html:17
+#: .\templates\posts.html:21
 msgid "Создать новость"
 msgstr "Create a news"
 
-#: .\templates\posts.html:18
+#: .\templates\posts.html:22
 msgid "Создать статью"
 msgstr "Create an article"
 
-#: .\templates\posts.html:20
+#: .\templates\posts.html:24
 msgid "Стать автором"
 msgstr "Become an author"
 
-#: .\templates\posts.html:38
+#: .\templates\posts.html:42
 msgid "Статьи отсутствуют"
 msgstr "There are no articles"
 
@@ -117,6 +117,22 @@ msgstr "You have subscribed to the newsletter"
 #: .\templates\subscription.html:12 .\templates\unsubscription.html:12
 msgid "Продолжить"
 msgstr "Continue"
+
+#: .\templates\tz_form.html:8
+msgid "Установить временную зону"
+msgstr "Set a time zone"
+
+#: .\templates\tz_form.html:14
+msgid "Установить"
+msgstr "Set"
+
+#: .\templates\tz_form.html:17
+msgid "Ваша зона"
+msgstr "Your zone"
+
+#: .\templates\tz_form.html:18
+msgid "Текущее время"
+msgstr "Current time"
 
 #: .\templates\unsubscription.html:6
 msgid "Отписка"

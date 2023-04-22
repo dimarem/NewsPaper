@@ -1,0 +1,18 @@
+{% load tz %}
+
+{% load i18n %}
+
+{% get_current_timezone as TIME_ZONE %}
+<form action="{% url 'set_timezone' %}" method="POST" class="mt-2" style="max-width: 500px;">
+    {% csrf_token %}
+    <label for="zones">{% trans 'Установить временную зону' %}:</label>
+    <select name="timezone" id="zones" class="form-control mt-2">
+        {% for tz in timezones %}
+            <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected {% endif %}>{{ tz }}</option>
+        {% endfor %}
+    </select>
+    <button class="btn text-white bg-primary mt-2">{% trans 'Установить' %}</button>
+</form>
+
+<div class="mt-2"><b>{% trans 'Ваша зона' %}</b>: {{ TIME_ZONE }}</div>
+<div class="mt-1"><b>{% trans 'Текущее время' %}</b>: {{ current_time|timezone:TIME_ZONE }}</div>

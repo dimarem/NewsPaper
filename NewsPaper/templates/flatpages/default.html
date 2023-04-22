@@ -13,8 +13,9 @@
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/themes.css' %}" rel="stylesheet" />
     </head>
-    <body>
+    <body class="{{ request.session.theme }}">
             {% load cache %}
             {% cache 300 nav %}
                 <!-- ... -->
