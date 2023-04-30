@@ -71,7 +71,7 @@ paths:
           description: ''
       tags:
       - news
-  /news/{id}/:
+  /news/{id}:
     get:
       operationId: retrieveNews
       description: 'Retrieve news'
