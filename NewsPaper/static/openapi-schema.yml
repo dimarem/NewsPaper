@@ -47,6 +47,7 @@ paths:
           description: ''
       tags:
       - news
+  /news/create/:
     post:
       operationId: createNews
       description: 'Create news'
@@ -55,26 +56,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/CreateNews'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/CreateNews'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/CreateNews'
       responses:
         '201':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/News'
+                $ref: '#/components/schemas/CreateNews'
           description: ''
       tags:
       - news
-  /news/{id}:
+  /news/{id}/:
     get:
       operationId: retrieveNews
-      description: 'Retrieve news'
+      description: 'Retrieve specific news'
       parameters:
       - name: id
         in: path
@@ -91,39 +92,10 @@ paths:
           description: ''
       tags:
       - news
-    put:
-      operationId: updateNews
-      description: ''
-      parameters:
-      - name: id
-        in: path
-        required: true
-        description: A unique integer value identifying this News.
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/News'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/News'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/News'
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/News'
-          description: ''
-      tags:
-      - news
+  /news/{id}/edit/:
     patch:
-      operationId: partialUpdateNews
-      description: ''
+      operationId: EditNews
+      description: 'Edit specific news'
       parameters:
       - name: id
         in: path
@@ -135,25 +107,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/EditNews'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/EditNews'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/News'
+              $ref: '#/components/schemas/EditNews'
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/News'
+                $ref: '#/components/schemas/EditNews'
           description: ''
       tags:
       - news
+  /news/{id}/delete/:
     delete:
       operationId: destroyNews
-      description: ''
+      description: 'Delete specific news'
       parameters:
       - name: id
         in: path
@@ -210,34 +183,35 @@ paths:
           description: ''
       tags:
         - articles
+  /article/create/:
     post:
-      operationId: createArticles
-      description: 'Create articles'
+      operationId: createArticle
+      description: 'Create article'
       parameters: [ ]
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/CreateArticle'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/CreateArticle'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/CreateArticle'
       responses:
         '201':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Articles'
+                $ref: '#/components/schemas/CreateArticle'
           description: ''
       tags:
         - articles
-  /articles/{id}/:
+  /article/{id}/:
     get:
-      operationId: retrieveArticles
-      description: 'Retrieve articles'
+      operationId: retrieveArticle
+      description: 'Retrieve specific article'
       parameters:
         - name: id
           in: path
@@ -250,43 +224,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Articles'
+                $ref: '#/components/schemas/Article'
           description: ''
       tags:
         - articles
-    put:
-      operationId: updateArticles
-      description: ''
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: A unique integer value identifying this News.
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Articles'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Articles'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Articles'
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Articles'
-          description: ''
-      tags:
-        - articles
+  /article/{id}/edit/:
     patch:
-      operationId: partialUpdateArticles
-      description: ''
+      operationId: EditArticle
+      description: 'Edit specific article'
       parameters:
         - name: id
           in: path
@@ -298,25 +243,26 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/EditArticle'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/EditArticle'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Articles'
+              $ref: '#/components/schemas/EditArticle'
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Articles'
+                $ref: '#/components/schemas/EditArticle'
           description: ''
       tags:
         - articles
+  /article/{id}/delete/:
     delete:
-      operationId: destroyArticles
-      description: ''
+      operationId: destroyArticle
+      description: 'Delete specific article'
       parameters:
         - name: id
           in: path
@@ -342,7 +288,27 @@ components:
           type: integer
         dt_created:
           type: string
-    Articles:
+    CreateNews:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        categories:
+          type: integer
+    EditNews:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        categories:
+          type: integer
+        rating:
+          type: integer
+    Article:
       type: object
       properties:
         title:
@@ -353,3 +319,23 @@ components:
           type: integer
         dt_created:
           type: string
+    CreateArticle:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        categories:
+          type: integer
+    EditArticle:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        categories:
+          type: integer
+        rating:
+          type: integer
