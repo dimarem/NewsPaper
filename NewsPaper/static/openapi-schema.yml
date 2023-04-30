@@ -1,0 +1,355 @@
+openapi: 3.0.2
+info:
+  title: 'Newspaper'
+  version: '1.0.0'
+paths:
+  /news/:
+    get:
+      operationId: listNews
+      description: 'List news'
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://newspaper.org/news/?offset=0&limit=10
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://newspaper.org/news/?offset=0&limit=10
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+    post:
+      operationId: createNews
+      description: 'Create news'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/News'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+  /news/{id}/:
+    get:
+      operationId: retrieveNews
+      description: 'Retrieve news'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this News.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+    put:
+      operationId: updateNews
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this News.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/News'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+    patch:
+      operationId: partialUpdateNews
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this News.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/News'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/News'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/News'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+          description: ''
+      tags:
+      - news
+    delete:
+      operationId: destroyNews
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this News.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - news
+  /articles/:
+    get:
+      operationId: listArticles
+      description: 'List articles'
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://newspaper.org/articles/?offset=0&limit=10
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://newspaper.org/articles/?offset=0&limit=10
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Articles'
+          description: ''
+      tags:
+        - articles
+    post:
+      operationId: createArticles
+      description: 'Create articles'
+      parameters: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Articles'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Articles'
+          description: ''
+      tags:
+        - articles
+  /articles/{id}/:
+    get:
+      operationId: retrieveArticles
+      description: 'Retrieve articles'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this News.
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Articles'
+          description: ''
+      tags:
+        - articles
+    put:
+      operationId: updateArticles
+      description: ''
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this News.
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Articles'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Articles'
+          description: ''
+      tags:
+        - articles
+    patch:
+      operationId: partialUpdateArticles
+      description: ''
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this News.
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Articles'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Articles'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Articles'
+          description: ''
+      tags:
+        - articles
+    delete:
+      operationId: destroyArticles
+      description: ''
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this News.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+        - articles
+components:
+  schemas:
+    News:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        rating:
+          type: integer
+        dt_created:
+          type: string
+    Articles:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        rating:
+          type: integer
+        dt_created:
+          type: string
