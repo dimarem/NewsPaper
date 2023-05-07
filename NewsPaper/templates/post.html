@@ -15,8 +15,8 @@
         <a href="/news/{{ post.id }}/edit" class="text-decoration-none">{% trans 'Редактировать' %}</a>
         <a href="/news/{{ post.id }}/delete" class="text-decoration-none">{% trans 'Удалить' %}</a>
     {% else %}
-        <a href="/article/{{ post.id }}/edit" class="text-decoration-none">{% trans 'Редактировать' %}</a>
-        <a href="/article/{{ post.id }}/delete" class="text-decoration-none">{% trans 'Удалить' %}</a>
+        <a href="/articles/{{ post.id }}/edit" class="text-decoration-none">{% trans 'Редактировать' %}</a>
+        <a href="/articles/{{ post.id }}/delete" class="text-decoration-none">{% trans 'Удалить' %}</a>
     {% endif %}
     {% if user.is_authenticated %}
         {% if subscribe %}

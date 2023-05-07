@@ -8,7 +8,7 @@ class TimezoneMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        tzname = request.session.get('django_timezone')
+        tzname = request.session.get('django_timezone', None)
 
         if tzname:
             timezone.activate(pytz.timezone(tzname))
@@ -23,7 +23,7 @@ class ThemeMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if not request.session['theme']:
+        if not request.session.get('theme', None):
             hour = timezone.now().hour
             request.session['theme'] = 'dark' if hour > 19 or hour < 7 else 'light'
 

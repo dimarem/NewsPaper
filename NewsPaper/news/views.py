@@ -1,4 +1,5 @@
 import pytz
+from rest_framework import viewsets, permissions
 
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
@@ -13,6 +14,7 @@ from django.utils import timezone
 from .models import Post, Author, Category
 from .filters import PostFilter
 from .forms import PostForm
+from .serializers import NewsSerializer, ArticleSerializer, CategorySerializer
 
 
 class PostsList(ListView):
@@ -185,3 +187,26 @@ def set_timezone(request):
     """Установить таймзону."""
     request.session['django_timezone'] = request.POST['timezone']
     return redirect('/news/')
+
+
+class NewsViewset(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(type=Post.NEWS)
+    serializer_class = NewsSerializer
+
+    def perform_create(self, serializer):
+        author = Author.objects.filter(user=self.request.user).first()
+        serializer.save(author=author, type=Post.NEWS)
+
+
+class ArticleViewset(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(type=Post.ARTICLE)
+    serializer_class = ArticleSerializer
+
+    def perform_create(self, serializer):
+        author = Author.objects.filter(user=self.request.user).first()
+        serializer.save(author=author, type=Post.ARTICLE)
+
+
+class CategoryViewset(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer

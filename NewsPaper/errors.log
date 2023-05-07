@@ -529,3 +529,1066 @@ Traceback (most recent call last):
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '['theme']' from 'request.session['theme']'
 2023-04-22 23:31:13,836 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 230358
+2023-05-01 00:06:07,106 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000029E01728680>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:06:07,106 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 21059
+2023-05-01 00:06:35,981 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x00000292D4D02580>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:06:35,981 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 21059
+2023-05-01 00:06:49,687 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x00000292D4DCBE00>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:06:49,687 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 21059
+2023-05-01 00:07:25,712 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x00000292D47A2600>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:07:25,718 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 162157
+2023-05-01 00:07:52,114 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x000001BBEE7E60C0>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:07:52,114 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 162157
+2023-05-01 00:13:20,936 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000014EAD64E900>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:13:20,936 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/news/ HTTP/1.1" 500 21075
+2023-05-01 00:16:57,965 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000020F5FD16F00>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-01 00:16:57,971 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/news/ HTTP/1.1" 500 21075
+2023-05-01 01:25:06,196 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'news.models.Post.author.RelatedObjectDoesNotExist'>, RelatedObjectDoesNotExist('Post has no author.'), <traceback object at 0x000001BCA9C990C0>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\modeltranslation\manager.py", line 388, in create
+    return super(MultilingualQuerySet, self).create(**kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\Skillfactory\Projects\NewsPaper\news\models.py", line 90, in save
+    super().save(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\Skillfactory\Projects\NewsPaper\news\signals.py", line 18, in post_amount_restriction
+    if len(instance.author.posts.filter(dt_created__date=datetime.date.today())) > 2:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 217, in __get__
+    raise self.RelatedObjectDoesNotExist(
+news.models.Post.author.RelatedObjectDoesNotExist: Post has no author.
+2023-05-01 01:25:06,199 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 20447
+2023-05-01 01:30:18,000 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'news.models.Post.author.RelatedObjectDoesNotExist'>, RelatedObjectDoesNotExist('Post has no author.'), <traceback object at 0x0000023760BF0540>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\modeltranslation\manager.py", line 388, in create
+    return super(MultilingualQuerySet, self).create(**kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\Skillfactory\Projects\NewsPaper\news\models.py", line 90, in save
+    super().save(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\Skillfactory\Projects\NewsPaper\news\signals.py", line 18, in post_amount_restriction
+    if len(instance.author.posts.filter(dt_created__date=datetime.date.today())) > 2:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 217, in __get__
+    raise self.RelatedObjectDoesNotExist(
+news.models.Post.author.RelatedObjectDoesNotExist: Post has no author.
+2023-05-01 01:30:18,016 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 20447
+2023-05-01 01:32:02,457 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'news.models.Post.author.RelatedObjectDoesNotExist'>, RelatedObjectDoesNotExist('Post has no author.'), <traceback object at 0x0000024B10AB8700>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\modeltranslation\manager.py", line 388, in create
+    return super(MultilingualQuerySet, self).create(**kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "E:\Skillfactory\Projects\NewsPaper\news\models.py", line 90, in save
+    super().save(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 847, in save_base
+    pre_save.send(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "E:\Skillfactory\Projects\NewsPaper\news\signals.py", line 18, in post_amount_restriction
+    if len(instance.author.posts.filter(dt_created__date=datetime.date.today())) > 2:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 217, in __get__
+    raise self.RelatedObjectDoesNotExist(
+news.models.Post.author.RelatedObjectDoesNotExist: Post has no author.
+2023-05-01 01:32:02,457 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 20447
+2023-05-07 12:22:11,428 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError('theme'), <traceback object at 0x00000201455D2A80>) Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\NewsPaper\news\middlewares.py", line 26, in __call__
+    if not request.session['theme']:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'theme'
+2023-05-07 12:22:11,428 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET / HTTP/1.1" 500 65663
+2023-05-07 12:23:02,011 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError('theme'), <traceback object at 0x0000018C8EB4BD00>) Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\NewsPaper\news\middlewares.py", line 26, in __call__
+    if not request.session['theme']:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'theme'
+2023-05-07 12:23:02,011 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET / HTTP/1.1" 500 65595
+2023-05-07 12:23:12,499 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'KeyError'>, KeyError('theme'), <traceback object at 0x0000018C8E9ABD00>) Internal Server Error: /news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\NewsPaper\news\middlewares.py", line 26, in __call__
+    if not request.session['theme']:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+KeyError: 'theme'
+2023-05-07 12:23:12,499 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /news/ HTTP/1.1" 500 65494
+2023-05-07 12:56:03,104 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("It is redundant to specify `source='categories'` on field 'ReadOnlyField' in serializer 'ArticleSerializer', because it is the same as the field name. Remove the `source` keyword argument."), <traceback object at 0x0000023880461B80>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 357, in fields
+    fields[key] = value
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 169, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\fields.py", line 367, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='categories'` on field 'ReadOnlyField' in serializer 'ArticleSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+2023-05-07 12:56:03,104 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 20294
+2023-05-07 12:59:20,335 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("It is redundant to specify `source='categories'` on field 'ReadOnlyField' in serializer 'ArticleSerializer', because it is the same as the field name. Remove the `source` keyword argument."), <traceback object at 0x000002AD55BEC8C0>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 357, in fields
+    fields[key] = value
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 169, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\fields.py", line 367, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='categories'` on field 'ReadOnlyField' in serializer 'ArticleSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+2023-05-07 12:59:20,349 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 20294
+2023-05-07 12:59:47,060 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x000002052558B9C0>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-07 12:59:47,070 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 21294
+2023-05-07 13:07:15,752 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'Request' object has no attribute 'categories'"), <traceback object at 0x00000137953F1C00>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'categories'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 198, in perform_create
+    serializer.save(author=self.request.user, categories=self.request.categories)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'categories'
+2023-05-07 13:07:15,755 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 19185
+2023-05-07 13:07:57,963 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'Request' object has no attribute 'categories'"), <traceback object at 0x0000024CCEEA3EC0>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\request.py", line 416, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'categories'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 199, in perform_create
+    serializer.save(author=self.request.user, categories=self.request.categories)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\request.py", line 418, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'categories'
+2023-05-07 13:07:57,963 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 19185
+2023-05-07 13:08:41,284 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'ValueError'>, ValueError('Cannot assign "<SimpleLazyObject: <User: dimaremenec>>": "Post.author" must be a "Author" instance.'), <traceback object at 0x000001AD0ACA0980>) Internal Server Error: /api/news/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 198, in perform_create
+    serializer.save(author=self.request.user, categories=self.request.POST.get('categories'))
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\modeltranslation\manager.py", line 388, in create
+    return super(MultilingualQuerySet, self).create(**kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\modeltranslation\translator.py", line 279, in new_init
+    old_init(self, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <User: dimaremenec>>": "Post.author" must be a "Author" instance.
+2023-05-07 13:08:41,299 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "POST /api/news/ HTTP/1.1" 500 20125
+2023-05-07 13:58:14,697 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'TypeError'>, TypeError("NewsViewset.partial_update() got an unexpected keyword argument 'pk'"), <traceback object at 0x000002C20345D940>) Internal Server Error: /api/news/21/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: NewsViewset.partial_update() got an unexpected keyword argument 'pk'
+2023-05-07 13:58:14,697 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "PATCH /api/news/21/ HTTP/1.1" 500 18469
+2023-05-07 14:08:13,993 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'AssertionError'>, AssertionError("`HyperlinkedIdentityField` requires the request in the serializer context. Add `context={'request': request}` when instantiating the serializer."), <traceback object at 0x000002049CB84800>) Internal Server Error: /api/news/21/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\NewsPaper\news\views.py", line 207, in partial_update
+    return Response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 378, in to_representation
+    assert 'request' in self.context, (
+AssertionError: `HyperlinkedIdentityField` requires the request in the serializer context. Add `context={'request': request}` when instantiating the serializer.
+2023-05-07 14:08:13,993 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "PATCH /api/news/21/ HTTP/1.1" 500 19413
+2023-05-07 14:22:22,976 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `test` is not valid for model `Post`.'), <traceback object at 0x000001B865485780>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 507, in to_representation
+    for field in fields:
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `test` is not valid for model `Post`.
+2023-05-07 14:22:22,976 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 20221
+2023-05-07 14:24:57,267 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000013F0A93D380>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-07 14:24:57,283 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 21294
+2023-05-07 14:27:31,210 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x0000018B3DF056C0>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-07 14:27:31,226 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 21294
+2023-05-07 14:34:03,630 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\utils\log.py (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.'), <traceback object at 0x000001A7B95ACD80>) Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 565, in to_representation
+    return [
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 566, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "E:\Skillfactory\Projects\venv\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+2023-05-07 14:34:03,630 ERROR E:\Skillfactory\Projects\venv\lib\site-packages\django\core\servers\basehttp.py None "GET /api/articles/ HTTP/1.1" 500 21294

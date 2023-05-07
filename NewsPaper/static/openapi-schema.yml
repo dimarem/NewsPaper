@@ -1,27 +1,28 @@
 openapi: 3.0.2
 info:
-  title: 'Newspaper'
-  version: '1.0.0'
+  title: Newspaper openapi-schema
+  version: 1.0.0
 paths:
-  /news/:
+  /api/news/:
     get:
       operationId: listNews
-      description: 'List news'
+      description: List paginated news
       parameters:
       - name: limit
         required: false
         in: query
-        description: Number of results to return per page.
+        description: Number of results to return per page
         schema:
           type: integer
       - name: offset
         required: false
         in: query
-        description: The initial index from which to return the results.
+        description: The initial index from which to return the results
         schema:
           type: integer
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
@@ -34,24 +35,21 @@ paths:
                     type: string
                     nullable: true
                     format: uri
-                    example: http://newspaper.org/news/?offset=0&limit=10
+                    example: http://newspaper.org/api/news/?offset=0&limit=10
                   previous:
                     type: string
                     nullable: true
                     format: uri
-                    example: http://newspaper.org/news/?offset=0&limit=10
+                    example: http://newspaper.org/api/news/?offset=0&limit=10
                   results:
                     type: array
                     items:
                       $ref: '#/components/schemas/News'
-          description: ''
       tags:
       - news
-  /news/create/:
     post:
       operationId: createNews
-      description: 'Create news'
-      parameters: []
+      description: Create news
       requestBody:
         content:
           application/json:
@@ -65,14 +63,14 @@ paths:
               $ref: '#/components/schemas/CreateNews'
       responses:
         '201':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateNews'
-          description: ''
+                $ref: '#/components/schemas/News'
       tags:
-      - news
-  /news/{id}/:
+        - news
+  /api/news/{id}/:
     get:
       operationId: retrieveNews
       description: 'Retrieve specific news'
@@ -80,58 +78,86 @@ paths:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this News.
+        description: A unique integer value identifying this news
         schema:
           type: string
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/News'
-          description: ''
       tags:
       - news
-  /news/{id}/edit/:
-    patch:
-      operationId: EditNews
-      description: 'Edit specific news'
+    put:
+      operationId: updateNews
+      description: Update specific news
       parameters:
-      - name: id
-        in: path
-        required: true
-        description: A unique integer value identifying this News.
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this news
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EditNews'
+              $ref: '#/components/schemas/UpdateNews'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/EditNews'
+              $ref: '#/components/schemas/UpdateNews'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/EditNews'
+              $ref: '#/components/schemas/UpdateNews'
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EditNews'
-          description: ''
+                $ref: '#/components/schemas/UpdateNews'
       tags:
-      - news
-  /news/{id}/delete/:
+        - news
+    patch:
+      operationId: partialUpdateNews
+      description: Partial update specific news
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this news
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateNews'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UpdateNews'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UpdateNews'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateNews'
+      tags:
+        - news
     delete:
-      operationId: destroyNews
-      description: 'Delete specific news'
+      operationId: deleteNews
+      description: Delete specific news
       parameters:
       - name: id
         in: path
         required: true
-        description: A unique integer value identifying this News.
+        description: A unique integer value identifying this news
         schema:
           type: string
       responses:
@@ -139,25 +165,26 @@ paths:
           description: ''
       tags:
       - news
-  /articles/:
+  /api/articles/:
     get:
       operationId: listArticles
-      description: 'List articles'
+      description: List paginated articles
       parameters:
         - name: limit
           required: false
           in: query
-          description: Number of results to return per page.
+          description: Number of results to return per page
           schema:
             type: integer
         - name: offset
           required: false
           in: query
-          description: The initial index from which to return the results.
+          description: The initial index from which to return the results
           schema:
             type: integer
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
@@ -170,24 +197,21 @@ paths:
                     type: string
                     nullable: true
                     format: uri
-                    example: http://newspaper.org/articles/?offset=0&limit=10
+                    example: http://newspaper.org/api/articles/?offset=0&limit=10
                   previous:
                     type: string
                     nullable: true
                     format: uri
-                    example: http://newspaper.org/articles/?offset=0&limit=10
+                    example: http://newspaper.org/api/articles/?offset=0&limit=10
                   results:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Articles'
-          description: ''
+                      $ref: '#/components/schemas/Article'
       tags:
         - articles
-  /article/create/:
     post:
       operationId: createArticle
-      description: 'Create article'
-      parameters: [ ]
+      description: Create article
       requestBody:
         content:
           application/json:
@@ -201,14 +225,14 @@ paths:
               $ref: '#/components/schemas/CreateArticle'
       responses:
         '201':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateArticle'
-          description: ''
+                $ref: '#/components/schemas/Article'
       tags:
         - articles
-  /article/{id}/:
+  /api/articles/{id}/:
     get:
       operationId: retrieveArticle
       description: 'Retrieve specific article'
@@ -216,58 +240,86 @@ paths:
         - name: id
           in: path
           required: true
-          description: A unique integer value identifying this News.
+          description: A unique integer value identifying this article
           schema:
             type: string
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Article'
-          description: ''
       tags:
         - articles
-  /article/{id}/edit/:
-    patch:
-      operationId: EditArticle
-      description: 'Edit specific article'
+    put:
+      operationId: updateArticle
+      description: Update specific article
       parameters:
         - name: id
           in: path
           required: true
-          description: A unique integer value identifying this News.
+          description: A unique integer value identifying this article
           schema:
             type: string
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EditArticle'
+              $ref: '#/components/schemas/UpdateArticle'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/EditArticle'
+              $ref: '#/components/schemas/UpdateArticle'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/EditArticle'
+              $ref: '#/components/schemas/UpdateArticle'
       responses:
         '200':
+          description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EditArticle'
-          description: ''
+                $ref: '#/components/schemas/UpdateArticle'
       tags:
         - articles
-  /article/{id}/delete/:
+    patch:
+      operationId: partialUpdateArticle
+      description: Partial update specific article
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: A unique integer value identifying this article
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateArticle'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UpdateArticle'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UpdateArticle'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateArticle'
+      tags:
+        - articles
     delete:
-      operationId: destroyArticle
+      operationId: deleteArticle
       description: 'Delete specific article'
       parameters:
         - name: id
           in: path
           required: true
-          description: A unique integer value identifying this News.
+          description: A unique integer value identifying this article
           schema:
             type: string
       responses:
@@ -280,14 +332,22 @@ components:
     News:
       type: object
       properties:
+        url:
+          type: string
+        id:
+          type: integer
         title:
           type: string
         content:
           type: string
         rating:
           type: integer
+        author:
+          type: string
         dt_created:
           type: string
+        categories:
+          type: array
     CreateNews:
       type: object
       properties:
@@ -295,30 +355,32 @@ components:
           type: string
         content:
           type: string
-        categories:
-          type: integer
-    EditNews:
+    UpdateNews:
       type: object
       properties:
         title:
           type: string
         content:
           type: string
-        categories:
-          type: integer
-        rating:
-          type: integer
     Article:
       type: object
       properties:
+        url:
+          type: string
+        id:
+          type: integer
         title:
           type: string
         content:
           type: string
         rating:
           type: integer
+        author:
+          type: string
         dt_created:
           type: string
+        categories:
+          type: array
     CreateArticle:
       type: object
       properties:
@@ -326,16 +388,10 @@ components:
           type: string
         content:
           type: string
-        categories:
-          type: integer
-    EditArticle:
+    UpdateArticle:
       type: object
       properties:
         title:
           type: string
         content:
           type: string
-        categories:
-          type: integer
-        rating:
-          type: integer

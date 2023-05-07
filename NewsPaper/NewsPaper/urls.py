@@ -17,25 +17,34 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
+from rest_framework import routers
 
-from news.views import NewsCreate, NewsUpdate, NewsDelete, ArticleCreate, ArticleUpdate, ArticleDelete
+from news.views import NewsCreate, NewsUpdate, NewsDelete, ArticleCreate, ArticleUpdate, ArticleDelete, NewsViewset, \
+    ArticleViewset, CategoryViewset
+
+router = routers.DefaultRouter()
+router.register(r'news', NewsViewset)
+router.register(r'articles', ArticleViewset)
+router.register(r'categories', CategoryViewset)
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('accounts/', include('allauth.urls')),
     path('', lambda r: redirect('news/')),
     path('news/', include('news.urls')),
-    path('articles/', include('news.urls')),
     path('news/create/', NewsCreate.as_view(), name='news_create'),
     path('news/<int:pk>/edit/', NewsUpdate.as_view(), name='news_update'),
     path('news/<int:pk>/delete/', NewsDelete.as_view(), name='news_delete'),
-    path('article/create/', ArticleCreate.as_view(), name='article_create'),
-    path('article/<int:pk>/edit/', ArticleUpdate.as_view(), name='article_update'),
-    path('article/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete'),
-    path('accounts/', include('allauth.urls')),
+    path('articles/', include('news.urls')),
+    path('articles/create/', ArticleCreate.as_view(), name='article_create'),
+    path('articles/<int:pk>/edit/', ArticleUpdate.as_view(), name='article_update'),
+    path('articles/<int:pk>/delete/', ArticleDelete.as_view(), name='article_delete'),
     path('swagger-ui/', TemplateView.as_view(
         template_name='swagger-ui.html',
-        extra_context={'schema_url':'openapi-schema'}
-    ), name='swagger-ui')
+        extra_context={'schema_url': 'openapi-schema'}
+    ), name='swagger-ui'),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
